@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jang Apologetics</title>
+    <script src="assets/js/my-navbar.js" defer></script>
+    <link rel="stylesheet" href="assets/css/actual.css" />
+
+
+    <!-- logo -->
+    <link rel="icon" type="image/png" href="assets/images/logo1.png">
+
+    <!-- google icons -->
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=keyboard_arrow_down" />
+
+  </head>
+
+
+  <body>
+  <header>
+  <div class="top_nav_section">
+    <my-navbar section="main" class="primary"></my-navbar>
+    <!-- <my-navbar section="apologetics" class="secondary"></my-navbar> -->
+      <!-- <secondary-nav section="apologetics"></secondary-nav> -->
+    </div>
+  </header>
+    <!-- <my-navbar section="main"></my-navbar> -->
+    <section class="hero">
+      <div class="hero-overlay">
+        <img src="assets/images/logo1.png" alt="Computing Christ Logo" class="hero-logo">
+
+        <h1 class="hero-title">Computing Christ</h1>
+
+        <h1 class="hero-subtitle">
+          Teaching people about
+          <span id="rotating-word">Jesus</span>
+        </h1>
+        
+      </div>
+    <div class="scroll-indicator">
+      <p class="scroll-text">Scroll Down</p>
+      <span class="material-symbols-outlined scroll-icon">
+        keyboard_arrow_down
+      </span>
+    </div>
+    </section>
+
+    <div class="main-screen">
+      <!-- <side-nav>
+        <ul>
+          <li><a href="manuscript_evidence.html">side option</a></li>
+          <li><a href="manuscript_evidence.html">side option</a></li>
+          <li><a href="manuscript_evidence.html">side option</a></li>
+          <li><a href="manuscript_evidence.html">side option</a></li>
+          <li><a href="manuscript_evidence.html">side option</a></li>
+          <li><a href="manuscript_evidence.html">side option</a></li>
+          <li><a href="manuscript_evidence.html">side option</a></li>
+          <li><a href="manuscript_evidence.html">side option</a></li>
+          <li><a href="manuscript_evidence.html">side option</a></li>
+          <li><a href="manuscript_evidence.html">side option</a></li>
+          <li><a href="manuscript_evidence.html">side option</a></li>
+          <li><a href="manuscript_evidence.html">side option</a></li>
+          <li><a href="manuscript_evidence.html">side option</a></li>
+        </ul>
+      </side-nav> -->
+      <!-- <div class="custom-button-holder">             <custom-button button_name="1"></custom-button>             <custom-button button_name="Hello"></custom-button>         </div> -->
+      <div class="main-content">
+        <h1>Welcome!</h1>
+        <p>Simple Goal: To teach people 
+          <span class="italic-bold">who</span> Jesus is, 
+          <span class="italic-bold">why</span> Christianity is true, and 
+          <span class="italic-bold">how</span> to live and think biblically.
+        </p>
+
+        <p>second goal:
+          This site exists to explore the 
+          truth of Christianity through 
+          Scripture, philosophy, and historical evidence.
+        </p>
+
+        <p> put "hero" banner for landing, 100vh</p>
+
+        <p>section 2, clickable navigation cards</p>
+
+        <p>3 short about you</p>
+
+        <pre>footer design:
+          columns
+          1 site button_name
+          2: navigation?
+          3: contact us?
+          dark background and light text
+          -----------------------------------
+          Jang Apologetics
+          Teaching truth clearly.
+
+          Explore | About | Contact
+          -----------------------------------
+          © 2026 Matthew Jang
+        </pre>
+        <h2>HTML</h2>
+        <h2>CSS</h2>
+        <h2>Bootstrap</h2>
+        <h2>W3.CSS</h2>
+        <h1>Scripting Tutorials</h1>
+        <h2>JavaScript</h2>
+        <h2>jQuery</h2>
+        <h2>React</h2>
+        <h1>Programming Tutorials</h1>
+        <h2>Python</h2>
+        <h2>Java</h2>
+        <h2>C++</h2>
+        <h1>HTML/CSS Tutorials</h1>
+        <h2>HTML</h2>
+        <h2>CSS</h2>
+        <h2>Bootstrap</h2>
+        <h2>W3.CSS</h2>
+        <h1>Scripting Tutorials</h1>
+        <h2>JavaScript</h2>
+        <h2>jQuery</h2>
+        <h2>React</h2>
+        <h1>Programming Tutorials</h1>
+        <h2>Python</h2>
+        <h2>Java</h2>
+        <h2>C++</h2>
+        <h1>HTML/CSS Tutorials</h1>
+        <h2>HTML</h2>
+        <h2>CSS</h2>
+        <h2>Bootstrap</h2>
+        <h2>W3.CSS</h2>
+        <h1>Scripting Tutorials</h1>
+        <h2>JavaScript</h2>
+        <h2>jQuery</h2>
+        <h2>React</h2>
+        <h1>Programming Tutorials</h1>
+        <h2>Python</h2>
+        <h2>Java</h2>
+        <h2>C++</h2>
+      </div>
+    </div>
+
+
+    <script>
+  const words = ["Jesus", "The Bible", "Truth", "Evidence", "Theology"];
+  let index = 0;
+  const rotatingWord = document.getElementById("rotating-word");
+
+  setInterval(() => {
+    rotatingWord.style.opacity = 0;
+
+    setTimeout(() => {
+      index = (index + 1) % words.length;
+      rotatingWord.textContent = words[index];
+      rotatingWord.style.opacity = 1;
+    }, 300);
+
+  }, 2500);
+</script>
+
+
+
+<!-- Footer -->
+
+
+  <footer class="site-footer">
+
+  <div class="footer-container">
+
+    <div class="footer-column">
+      <h1 class="footer-title">Computing Christ</h3>
+      <p class="footer-tagline">
+        Thinking clearly about Christ through Scripture,
+        philosophy, and historical evidence.
+      </p>
+    </div>
+
+    <div class="footer-column">
+      <h4>Explore</h4>
+      <ul class="footer-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Apologetics</a></li>
+        <li><a href="#">Theology</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Connect</h4>
+      <ul class="footer-links">
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Email</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Matthew Jang
+  </div>
+
+</footer>
+
+  </body>
+
+</html>
