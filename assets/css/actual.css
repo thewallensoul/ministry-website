@@ -1,9 +1,9 @@
-* {
+/* * {
      border:1px solid red ;
      padding:10px;
      margin:5px;
      box-sizing: border-box;
- }
+ } */
  
 
  * {
@@ -54,7 +54,12 @@
      background-color: var(--bg);
  }
 
-
+ html {
+  font-size: 16px;
+}
+body {
+  font-size: clamp(16px, 1.1vw, 18px);
+}
 
 
  .custom-button-holder {
@@ -117,23 +122,16 @@
 
  my-navbar.secondary ul li a{
      height:30px;
-     padding:4px 3px;
+     padding:4px 8px;
      /* margin:4px;
  */     min-width:60px;
      font-size:16px;
      /* border: solid black 1px; */
  }
 
- nav {
-     /* position:relative;
- */     /* position: sticky;
- */     /* top:0;
- */     
+ nav { 
      padding:0;
      margin:0;
-     /* border:none; */
-     /* background-color: var(--navbar); */
-     /* background:transparent; */
  }
  nav ul {
      list-style-type: none;
@@ -154,7 +152,7 @@
    color: var(--button-text);
    background-color: var(--accent);
    text-align: center;
-   /* padding: 14px 16px; */
+   padding: 14px 16px;
    text-decoration: none;
    margin:1px;
    border:none;
@@ -243,15 +241,35 @@ my-navbar {
     counter-reset: section;
  }
 
+ article {
+    padding:0px;
+    margin:0px;
+ }
+
  section {
   scroll-margin-top: 120px;
+  padding: 1rem;
+  margin:0px;
 }
 
+h1 {
+    margin-top:0px;
+    font-size: clamp(24px, 3vw, 40px);
+}
 h2 {
    counter-reset: subsection;
-   background-color: #ffe6cf;
-   margin-left:0px;
+   margin:0px;
+   font-size: clamp(24px, 3vw, 40px);
  }
+
+ h2 {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  font-size: clamp(22px, 3vw, 30px);
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent);
+}
+
  h2::before {
    counter-increment: section;
    
@@ -271,12 +289,12 @@ h2 {
     margin-left:20px;
  }
 
- h3 ~ p {
-    margin-left:30px;
+ h3 ~ p,ul,.interaction,.objection {
+    margin-left:35px;
  }
 
  h4 {
-    margin-left:40px;
+    margin-left:35px;
  }
 
  span {
@@ -290,6 +308,87 @@ h2 {
     background-color: none;
  }
 
+ .interaction {
+    border:black dotted 1px;
+    border-style:dashed;
+    padding:0px 10px;
+ }
+
+ .objection {
+  border-left: 4px solid var(--accent);
+  background-color: #f8f4ef;
+  padding: 0.75rem 1rem;
+  margin: 1.5rem 0 0.75rem 0;
+  font-style: italic;
+}
+
+/* =========================
+   INTERACTION BLOCK
+========================= */
+
+.interaction {
+  background: #fafafa;
+  border-left: 4px dashed #bbb;
+  padding: 1rem 1.2rem;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.interaction:hover {
+  background: #f1f1f1;
+}
+
+/* =========================
+   OBJECTION BLOCK
+========================= */
+
+.objection {
+  border-left: 5px solid var(--accent);
+  background: #fff7ef;
+  padding: 1rem 1.25rem;
+  margin: 2rem 0 1rem 35px;
+  border-radius: 6px;
+  font-style: italic;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.objection strong {
+  font-style: normal;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--accent);
+}
+
+/* =========================
+   ARGUMENT BLOCK (Optional)
+========================= */
+
+.argument-block {
+  background: linear-gradient(to right, #ffffff, #fafafa);
+  border: 1px solid #eee;
+  padding: 2rem;
+  margin: 3rem 0;
+  border-radius: 12px;
+}
+
+/* =========================
+   BLOCKQUOTE
+========================= */
+
+blockquote {
+  border-left: 4px solid var(--accent);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+
+
  .chatgpt {
     border: solid 7px rgb(78, 246, 0);
     border-radius: 5px;
@@ -297,6 +396,14 @@ h2 {
 
  sub-topics {
      display: block;
+ }
+
+  .main-screen {
+     display:flex;
+     flex-direction: column;
+     margin:auto;
+     /* width:70%; */
+     max-width:900px;
  }
 
  .main-content {
@@ -308,18 +415,24 @@ h2 {
      width:100%;
      background-color: var(--content-bg) ;
      /* max-width: 80% */ 
-    
     }
 
 
- .main-screen {
-     display:flex;
-     flex-direction: column;
-     margin:auto;
-     padding:0;
-     width:70%;
-     max-width:700px;
+  @media (max-width: 768px){
+    .main-screen {
+        width:100%;
+        margin:0px;
+        padding:0px;
+    } 
 
+    .main-content {
+        width:100%;
+        margin:0px;
+    } 
+
+    h2, h3, h3 ~ p, h4 {
+        margin-left:0px;
+    }
 
  }
 
@@ -390,7 +503,7 @@ h2 {
 }
 
 .hero-title {
-  font-size: 3rem;
+  font-size: clamp(30px, 3vw, 40px);
   margin-bottom: 10px;
    border:none;
 }
@@ -451,6 +564,8 @@ h2 {
   color: #e0e6f0;
   padding-top: 60px;
   margin-top: 80px;
+  margin:0px;
+  width:100%;
 }
 
 .footer-container {
@@ -460,7 +575,8 @@ h2 {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 40px;
+  /* gap: 40px; */
+  gap: 3vw;
 }
 
 .footer-column {
@@ -485,6 +601,7 @@ h2 {
   font-size: 1rem;
   letter-spacing: 1px;
   color: rgb(200, 140, 90); /* accent */
+  margin:0px;
 }
 
 .footer-links {
