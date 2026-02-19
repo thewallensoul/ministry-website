@@ -13,7 +13,7 @@ class NavBar extends HTMLElement {
     const active = this.getAttribute('active');     
     const pages_category = '/pages'   
     if (section === 'main'){      
-        if (window.location.pathname != '/index.html') {
+        if (window.location.pathname != '/index.html' && window.location.pathname != '/') {
             var current = '/' + window.location.pathname.split(pages_category)[1].split('/')[1]; 
         }
         else {
