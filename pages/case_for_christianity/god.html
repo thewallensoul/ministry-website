@@ -5,29 +5,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jang Apologetics</title>
-  <script src="/assets/js/my-navbar.js" defer></script>
+  
+  <script src="/assets/js/head-loader.js"></script>
   <link rel="stylesheet" href="/assets/css/actual.css" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&family=Nunito:wght@400;600&display=swap"
-    rel="stylesheet">
 </head>
 
-<header>
-  <div class="top_nav_section">
-    <my-navbar section="main"></my-navbar>
-    <my-navbar section="apologetics" class="secondary"></my-navbar>
-    <!-- <secondary-nav section="apologetics"></secondary-nav> -->
-  </div>
-</header>
 
 <body>
+  <header class="site-header">
+    <my-brand-bar></my-brand-bar>
+    <my-navbar section="main" class="primary"></my-navbar>
+    <my-navbar section="case_for_christianity" class="secondary"></my-navbar>
+  </header>
   <div class="main-screen">
     <div class="main-content">
         <article>
-          <section>
             <h1>Arguments for God</h1>
 
             <p>
@@ -35,9 +28,6 @@
               that's not true. We'll mostly give positive evidence for God's
               existence, objections are handled here:
             </p>
-
-            <blockquote>this is blockquote</blockquote>
-            <aside>this is aside</aside>
 
             <p>
               intro: we will tackle 5 main areas of life that
@@ -214,17 +204,14 @@
 
         <h3>Morality Is Discovered, Not Invented</h3>
 
-        <div class="argument-block">
         <div class="objection">
           <strong>Objection:</strong> But don't we teach morals?
         </div>
-        
-
         <p>
           Being taught morality does not mean morality is invented, just
           as being taught mathematics does not mean mathematics was created.
         </p>
-        </div>
+        
 
         <!-- ========================= -->
         <!-- 6. MORALITY CANNOT BE REDUCED -->
@@ -310,6 +297,17 @@
 
       <section id="science">
         <h2>Science</h2>
+        <div class="objection">
+          <strong>Note:</strong>
+          This section will have many number examples using scientific 
+          or mathematical notations. At any time you can hover over the 
+          <span class="material-symbols-outlined">info</span>
+          icon found next to the numbers for reference.
+
+          <p>10^3 = 10 x 10 x 10 = 1000</p>
+          <p>1.78e+3 = 1.78 x 10^3 = 1.78 x 1000 = 178,000</p>
+          <p>10^12 = 1,000,000,000 (1 trillion)</p>
+        </div>
         <h3>Biology</h3>
         <p>"Intelligent Design"</p>
         <p>

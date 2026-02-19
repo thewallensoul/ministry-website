@@ -17,6 +17,7 @@
      --accent:rgb(200,140,90);
      --hover:rgb(120,165,255);
      --content-bg:rgb(255, 255, 255);
+     --text-muted:rgb(91, 91, 91);
  }
  /* color theme options * /* current      --bg:rgb(213, 224, 236);
      --navbar:rgb(32,35,38);
@@ -56,6 +57,8 @@
 
  html {
   font-size: 16px;
+  overflow-y: scroll;
+  /* scrollbar-gutter: stable; // not supported for very old browsers */
 }
 body {
   font-size: clamp(16px, 1.1vw, 18px);
@@ -86,6 +89,154 @@ body {
 
  }
 
+ /* =========================
+   HEADER STRUCTURE
+========================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ===== Brand Bar ===== */
+
+.brand-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--navbar);
+  padding: 0.6rem 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.brand-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 600px;
+  min-width: 240px;
+  width:40%;
+}
+
+.brand-logo {
+  height: 40px;
+}
+
+.brand-name {
+  color: var(--button-text);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* ===== Search ===== */
+
+.brand-center {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+/* Outer wrapper controls visual state */
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  width: 220px;              /* compact default */
+  max-width: 420px;          /* desktop cap */
+  min-width: 160px;
+  width: 100%;
+
+  padding: 8px 14px;
+  border-radius: 30px;
+
+  background-color: rgba(255, 255, 255, 0.12); /* muted */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  transition: 
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Focus state (when input is active) */
+/* .search-wrapper:focus-within {
+  background-color: white;
+  border-color: var(--accent);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+} */
+
+/* Expand on focus */
+.search-wrapper:focus-within {
+  width: 380px;
+  background-color: white;
+  border-color: var(--accent);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon */
+.search-icon {
+  width: 18px;
+  height: 18px;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.25s ease;
+}
+
+/* Icon becomes darker on focus */
+.search-wrapper:focus-within .search-icon {
+  color: #555;
+}
+
+/* Input */
+.search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.95rem;
+  color: white;
+}
+
+/* Input text changes on focus */
+.search-wrapper:focus-within .search-input {
+  color: #222;
+}
+
+/* Placeholder styling */
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search-wrapper:focus-within .search-input::placeholder {
+  color: #888;
+}
+
+
+/* ===== Donate Button ===== */
+.brand-right {
+  white-space: nowrap;
+}
+
+.donate-button {
+  background-color: var(--accent);
+  color: white;
+  padding: 8px 14px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.donate-button:hover {
+  background-color: var(--hover);
+  transform: translateY(-2px);
+}
+
+/* ===== Main Nav Bar ===== */
+
  header {
      position:sticky;
      top:0;
@@ -109,7 +260,9 @@ body {
  }
 
    my-navbar.primary{
-    background-color: transparent;
+    /* background-color: transparent;
+     */
+     background-color: var(--navbar);
  }
 
   my-navbar.secondary{
@@ -242,7 +395,6 @@ my-navbar {
  }
 
  article {
-    padding:0px;
     margin:0px;
  }
 
@@ -385,6 +537,7 @@ blockquote {
   margin: 1.5rem 0;
   color: var(--text-muted);
   font-style: italic;
+  font-weight: bold;
 }
 
 
@@ -392,6 +545,14 @@ blockquote {
  .chatgpt {
     border: solid 7px rgb(78, 246, 0);
     border-radius: 5px;
+ }
+
+ .under_construction {
+    border: solid 7px rgb(0, 185, 246);
+    border-radius: 5px;
+ }
+ .under_construction::before {
+  content: "To-do";
  }
 
  sub-topics {
@@ -404,6 +565,8 @@ blockquote {
      margin:auto;
      /* width:70%; */
      max-width:900px;
+     padding-top:2vh;
+     padding-bottom:2vh;
  }
 
  .main-content {
@@ -411,6 +574,7 @@ blockquote {
      border: solid 5px;
      border-radius: 20px;
      margin: auto;
+     padding: 10px;
      /* width: */     
      width:100%;
      background-color: var(--content-bg) ;
@@ -419,6 +583,28 @@ blockquote {
 
 
   @media (max-width: 768px){
+    .brand-bar {
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0.6rem .5rem;
+    }
+
+    .brand-center {
+      order: 3;
+      width: 100%;
+      justify-content: flex-end;
+      padding-right: 0;
+    }
+
+    .search-wrapper {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .search-wrapper:focus-within {
+      width: 100%;
+    }
+
     .main-screen {
         width:100%;
         margin:0px;
@@ -428,6 +614,7 @@ blockquote {
     .main-content {
         width:100%;
         margin:0px;
+        border-radius: 0px;
     } 
 
     h2, h3, h3 ~ p, h4 {

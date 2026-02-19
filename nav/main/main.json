@@ -1,8 +1,12 @@
 [
   { "label": "Home", "url": "/index.html" },
+  { "label": "Case For Christianity", "url": "/case_for_christianity/home.html" },
   { "label": "Apologetics", "url": "/apologetics/home.html" },
-  { "label": "Christianity", "url": "/christianity/home.html" },
-  { "label": "Videos", "url": "/videos/home.html" },
-  { "label": "Ext resource", "url": "/resources/home.html" },
-  { "label": "Guides+Downloads", "url": "/guides_downloads/home.html" }
+  { "label": "What Is Christianity", "url": "/christianity/home.html" },
+
+  { "label": "Discipleship", "url": "/discipleship/home.html" },
+
+  { "label": "Library", "url": "/library/home.html" },
+
+  { "label": "About", "url": "#" }
 ]

@@ -3,13 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jang Apologetics</title>
-    <script src="assets/js/my-navbar.js" defer></script>
+
+    <title>
+      Computing Christianity | Teaching Truth Through Scripture, Philosophy, Science & Evidence 
+    </title>
+    <script src="/assets/js/head-loader.js"></script>
     <link rel="stylesheet" href="assets/css/actual.css" />
-
-
-    <!-- logo -->
-    <link rel="icon" type="image/png" href="assets/images/logo1.png">
 
     <!-- google icons -->
      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=keyboard_arrow_down" />
@@ -17,14 +16,14 @@
   </head>
 
 
-  <body>
-  <header>
-  <div class="top_nav_section">
+<body>
+  <header class="site-header">
+    <my-brand-bar></my-brand-bar>
+
+    <!-- Main Navigation -->
     <my-navbar section="main" class="primary"></my-navbar>
-    <!-- <my-navbar section="apologetics" class="secondary"></my-navbar> -->
-      <!-- <secondary-nav section="apologetics"></secondary-nav> -->
-    </div>
   </header>
+
     <!-- <my-navbar section="main"></my-navbar> -->
     <section class="hero">
       <div class="hero-overlay">
@@ -66,30 +65,32 @@
       </side-nav> -->
       <!-- <div class="custom-button-holder">             <custom-button button_name="1"></custom-button>             <custom-button button_name="Hello"></custom-button>         </div> -->
       <div class="main-content">
+        <section>
         <h1>Welcome!</h1>
-        <p>Simple Goal: To teach people 
+        <p>Mission Statement: To teach people 
           <span class="italic-bold">who</span> Jesus is, 
           <span class="italic-bold">why</span> Christianity is true, and 
           <span class="italic-bold">how</span> to live and think biblically.
         </p>
 
-        <p>second goal:
+        <p>How:
           This site exists to explore the 
           truth of Christianity through 
-          Scripture, philosophy, and historical evidence.
+          Scripture, philosophy, science and historical evidence.
         </p>
 
-        <p> put "hero" banner for landing, 100vh</p>
+        <div class="under_construction">
+        <p>Find a topic [ cards ]</p>
 
-        <p>section 2, clickable navigation cards</p>
+        <p>Learn about the ministry [ link ]</p>
+        </div>
 
-        <p>3 short about you</p>
-
+      </section>
       </div>
     </div>
 
 
-    <script>
+<script>
   const words = ["Jesus", "The Bible", "Truth", "Evidence", "Theology"];
   let index = 0;
   const rotatingWord = document.getElementById("rotating-word");
@@ -103,51 +104,13 @@
       rotatingWord.style.opacity = 1;
     }, 300);
 
-  }, 2500);
+  }, 2000);
 </script>
 
 
 
 <!-- Footer -->
-
-
-  <footer class="site-footer">
-
-  <div class="footer-container">
-
-    <div class="footer-column">
-      <h1 class="footer-title">Computing Christ</h3>
-      <p class="footer-tagline">
-        Thinking clearly about Christ through Scripture,
-        philosophy, and historical evidence.
-      </p>
-    </div>
-
-    <div class="footer-column">
-      <h4>Explore</h4>
-      <ul class="footer-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Apologetics</a></li>
-        <li><a href="#">Theology</a></li>
-        <li><a href="#">About</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-column">
-      <h4>Connect</h4>
-      <ul class="footer-links">
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Email</a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    © 2026 Matthew Jang
-  </div>
-
-</footer>
+<my-footer></my-footer>
 
   </body>
 
