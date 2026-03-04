@@ -13,7 +13,7 @@ class MyFooter extends HTMLElement {
   <div class="footer-container">
 
     <div class="footer-column">
-      <h1 class="footer-title">Computing Christ</h3>
+      <h1 class="footer-title">Computing Christ</h1>
       <p class="footer-tagline">
         Thinking clearly about Christ through Scripture,
         Philosophy, Science, and Evidence.

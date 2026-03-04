@@ -13,6 +13,7 @@ class BrandBar extends HTMLElement {
             <span class="brand-name">Computing Christianity</span>
         </div>          
         
+        <!--
         <div class="brand-center">
         <form class="search-form">
             <div class="search-wrapper">
@@ -28,7 +29,7 @@ class BrandBar extends HTMLElement {
             >
             </div>
         </form>
-        </div>
+        </div> -->
 
         <div class="brand-right">
              <a href="/donate/home.html" class="donate-button">Donate</a>

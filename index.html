@@ -18,14 +18,14 @@
 
 <body>
 
-  <div class="landing-page-hero-wrapper">
-    <header class="site-header">
+  <header class="site-header">
       <my-brand-bar></my-brand-bar>
 
       <!-- Main Navigation -->
       <my-navbar section="main" class="primary"></my-navbar>
     </header>
 
+  <div class="landing-page-hero-wrapper">
     <!-- <my-navbar section="main"></my-navbar> -->
     <section class="hero">
       <div class="hero-overlay">
@@ -41,10 +41,12 @@
       </div>
 
       <div class="scroll-indicator">
-        <p class="scroll-text">Scroll Down</p>
-        <span class="material-symbols-outlined scroll-icon">
+        <a href="#welcome">
+          <p class="scroll-text">Scroll Down</p>
+          <span class="material-symbols-outlined scroll-icon">
           keyboard_arrow_down
         </span>
+        </a>
       </div>
     </section>
   </div>
@@ -71,7 +73,7 @@
       <!-- <div class="custom-button-holder">             <custom-button button_name="1"></custom-button>             <custom-button button_name="Hello"></custom-button>         </div> -->
       <div class="main-content">
         <section>
-        <h1>Welcome!</h1>
+        <h1 id="welcome">Welcome!</h1>
         <p>Mission Statement: To teach people 
           <span class="italic-bold">who</span> Jesus is, 
           <span class="italic-bold">why</span> Christianity is true, and 
@@ -84,13 +86,57 @@
           Scripture, philosophy, science and historical evidence.
         </p>
 
-        <div class="under_construction">
-        <p>Find a topic [ cards ]</p>
+        </section>
 
-        <p>Learn about the ministry [ link ]</p>
+ 
+
+        <section>
+        <h2 class="underline">Map</h2>
+        <div class="reference-box">
+          <p>Case For Christianity - Provides positive evidence for God's existence, hopes to convince unbelievers + be an 
+            introduction to apologetics
+          </p>
+          <p>Apologetics - Explain topics in depth, argumentation for christianity, against other religions</p>
+          <p>What is Christianity - Explains Christian doctrines, for new and not yet believers</p>
+          <p>Discipleship - For new, growing, or mature believers, advice and resources to grow spiritually</p>
+          <p>Library - ?</p>
         </div>
 
       </section>
+
+      <section class="card-section">
+          <h2 class="underline">Explore the Foundations</h2>
+
+          <div class="card-grid">
+
+            <a href="/pages/case_for_christianity/home.html" class="card">
+              <h3>Case For Christianity</h3>
+              <p>
+                Philosophical and scientific arguments for the existence of a
+                necessary, personal Creator.
+              </p>
+              <span class="card-link">Explore →</span>
+            </a>
+
+            <a href="/pages/apologetics/home.html" class="card">
+              <h3>Apologetics</h3>
+              <p>
+                Historical evidence for Jesus of Nazareth and the case for
+                His resurrection.
+              </p>
+              <span class="card-link">Explore →</span>
+            </a>
+
+            <a href="/pages/discipleship/home.html" class="card">
+              <h3>Discipleship</h3>
+              <p>
+                Manuscript evidence, textual transmission, and historical reliability.
+              </p>
+              <span class="card-link">Explore →</span>
+            </a>
+
+          </div>
+        </section>
       </div>
     </div>
 
