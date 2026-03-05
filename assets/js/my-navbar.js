@@ -1,5 +1,19 @@
+const NAV_CACHE = {};
+
+function getNav(section) {
+
+  if (!NAV_CACHE[section]) {
+
+    NAV_CACHE[section] =
+      fetch(`/nav/${section}/${section}.json`)
+        .then(r => r.json());
+
+  }
+
+  return NAV_CACHE[section];
+}
  
- 
+
 class NavBar extends HTMLElement {   
     constructor() {     
         super(); 
@@ -9,7 +23,7 @@ class NavBar extends HTMLElement {
     
  async render(){           
     const section = this.getAttribute('section');         
-    const items = await fetch(`/nav/${section}/${section}.json`).then(r => r.json());       
+    const items = await getNav(section);      
     const active = this.getAttribute('active');     
     const pages_category = '/pages'   
     if (section === 'main'){      
@@ -44,6 +58,8 @@ class NavBar extends HTMLElement {
   connectedCallback() {
     this.render();
   }
+
+
 }
    
                  

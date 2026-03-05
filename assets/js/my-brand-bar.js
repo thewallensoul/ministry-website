@@ -8,10 +8,10 @@ class BrandBar extends HTMLElement {
   async render() {
     this.innerHTML = `           
     <div class="brand-bar">   
-        <div class="brand-left">
+        <a href="/index.html" class="brand-left">
             <img src="/assets/images/logo1.png" alt="Computing Christ Logo" class="brand-logo">
             <span class="brand-name">Computing Christianity</span>
-        </div>          
+        </a>        
         
         <!--
         <div class="brand-center">
