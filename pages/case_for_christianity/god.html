@@ -13,7 +13,7 @@
 
     <!-- google icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=info" />
-
+<!-- <script src="/assets/js/toc-generator.js"></script> -->
   </head>
 
 
@@ -22,11 +22,25 @@
       <my-brand-bar></my-brand-bar>
 
       <!-- Main Navigation -->
-      <my-navbar section="main" class="primary"></my-navbar>
-      <my-navbar section="case_for_christianity" class="secondary"></my-navbar>
+      <nav class="desktop-nav">
+        <my-navbar section="main" class="primary"></my-navbar>
+        <my-navbar section="case_for_christianity" class="secondary"></my-navbar>
+      </nav>
+
+      <button class="hamburger" id="hamburger">
+        ☰
+      </button>
+
+      <nav class="mobile-nav" id="mobile-nav">
+        <mobile-nav-menu></mobile-nav-menu>
+      </nav>
   </header>
   
-  <div class="main-screen">
+  <main class="main-screen">
+
+    <!-- AUTO TOC SIDEBAR -->
+    <aside id="toc-sidebar"></aside>
+
     <div class="main-content">
       <article>
         <section>
@@ -45,22 +59,23 @@
               Morality, Science, Reason, Mind, Prophecy, Experience.
             </p>
 
-            <nav class="table-of-contents">
+            <aside class="table-of-contents">
               <h2>Outline</h2>
               <ul>
                 <li><a href="#morality">1. Morality</a>
-                  <ul>
+                  <!-- <ul>
                     <li><a href="#morality-exists">Morality Exists</a></li>
                     <li><a href="#morality-matters">Morality Matters</a></li>
                     <li><a href="#morality-objective">Morality Is Objective</a></li>
                     <li><a href="#morality-transcendent">Morality Is Transcendent</a></li>
                     <li><a href="#morality-discovered">Morality Is Discovered</a></li>
+                    <li><a href="#morality-not-desires">Morality Is Not Just Desires</a></li>
                     <li><a href="#morality-lawgiver">Morality Implies a Lawgiver</a></li>
-                  </ul>
+                  </ul> -->
                 </li>
 
                 <li><a href="#science">2. Science</a>
-                  <ul>
+                  <ul style="margin-bottom:0;">
                     <li><a href="#biology">Biology</a></li>
                     <li><a href="#cosmology">Cosmology</a></li>
                   </ul>
@@ -71,7 +86,7 @@
                 <li><a href="#prophecy">5. Prophecy</a></li>
                 <li><a href="#experience">6. Experience</a></li>
               </ul>
-            </nav>
+            </aside>
             <!-- <p>
               once you know the arguments you can reference the cheatsheet, guide map,
               or playbook (whatever you would like to call it) here: :link:
@@ -148,7 +163,7 @@
         </p>
 
         <p>
-          Restoritive or Retributive justice is that you deserve to be
+          Restorative or Retributive justice is that you deserve to be
           restored for how you were wronged. If someone stole $1000 from
           you, surely you'd want at least $1000 back. If someone damaged
           your car, you'll at least want the damage repaired.
@@ -255,7 +270,7 @@
         <!-- 6. MORALITY CANNOT BE REDUCED -->
         <!-- ========================= -->
 
-        <h3 class="numbered">Morality Cannot Be Reduced to Desire or Environment</h3>
+        <h3 id="morality-not-desires" class="numbered">Morality Cannot Be Reduced to Desire or Environment</h3>
 
         <p>
           Moral convictions are different from other natural desires.
@@ -288,7 +303,7 @@
         <!-- 7. MORALITY IMPLIES A LAWGIVER -->
         <!-- ========================= -->
 
-        <h3 class="numbered">Morality Is Not Invented / Comes from God</h3>
+        <h3 id="morality-lawgiver" class="numbered">Morality Implies Lawgiver</h3>
 
         <h4>Laws Come From Authorities</h4>
 
@@ -352,31 +367,33 @@
 
         </div>
 
-
-
         <h3 id="biology" class="numbered">Biology</h3>
           <p>
-            Biology shows evidence of God's existence because it shows 
-            evidence of what 2 things. 
+            Biology shows evidence of God's existence because of 3 things. 
             
           </p>
           
           <p>
-             The first is called <span class="italic-bold">"Intelligent Design"</span>. 
-            This the ability to look at some object or system, and 
-            determine that it came from an intelligent source rather
-            than from pure chance.
+            First, <span class="italic-bold">"Intelligent Design"</span>. 
+            This the ability to examine some object or system, and 
+            determine that it is the result of an intelligent source rather
+            than unguided chance.
           </p>
 
           <p>
-            The second is <span class="italic-bold">"Irreducible Complexity"</span>.
-            This is the attribute a system has when the functionality of the system
-            as a whole is dependent on each individual part, and the removal of 
-            even a tiny aspect of the system results in the loss of the 
-            system's function.
+            Second,<span class="italic-bold">"Highly Specified Information"</span>.
+            DNA and proteins contain complex information that represents 
+            code and language, which stronglly strengthens the case for intelligent design.
+          </p>
+
+          <p>
+            Third, <span class="italic-bold">"Irreducible Complexity"</span>.
+            A system is irreducibly complex when its overall function depennds on
+            multiple interacting parts, such that removing even one part causes
+            the entire system to stop functioning.
           </p>
           
-          <h3 class="numbered">Irreducible Complexity</h3>
+          <h4 class="numbered">Intelligent Design</h4>
           <p>
             Intelligent Design becomes more clear and likely 
             the more that the following are true about a system:
@@ -384,18 +401,41 @@
           
 
           <ul class="indented-list">
-            <li>It has highly specified information</li>
             <li>It has patterns we recognize from outside the system</li>
-            <li>The system and / or it's information accomplish a specific goal or function</li>
+            <li>It has highly specified information</li>
+            <li>The system and / or its information accomplish a specific goal or function</li>
             <li>The system is irreducibly complex</li>
           </ul>
 
-          <!-- <p>
-            For each of these we'll look at 1, the attributes 
-            of each, and 2, how we identify them in our own lives.
-          </p> -->
+          <h5>Recognizable Patterns</h5>
+          <p>
+          Another indicator of intelligent design is the presence of
+          patterns that originate outside the system itself.
+          </p>
 
-          <h3>Information + Patterns</h3>
+          <p>
+          When we encounter a pattern that we already recognize from
+          another domain — such as language, engineering and coding systems, or
+          symbolic representation — we naturally infer that the
+          pattern was placed there by an intelligent agent that
+          already understood that pattern.
+          </p>
+
+          <p>
+          For example, if you discovered English sentences carved
+          into a rock on Mars, you would immediately conclude that
+          an intelligent mind placed them there. The reason is simple:
+          English is a language system that exists outside the rock.
+          The rock itself does not generate language.
+          </p>
+
+          <p>
+          In the same way, DNA contains patterns that resemble
+          coding systems and translation processes, which strongly
+          suggest the involvement of intelligence.
+          </p>
+
+          <h5>Information Levels</h5>
             <!-- <p>There are different levels of information, and DNA has
               what's called, <span class="italic-bold">highly specified</span>
               information.
@@ -407,21 +447,19 @@
             </p>
 
             <p>
-              Let's say you have a dog and a computer.
-              Your dog's name will be Daisy.
-              Daisy likes to pretend to type on your
-              keyboard while you're away, at whenever
-              you forget to lock your computer,
-              you end up with a typical welcome home note like this:
+              Your dog's name is Daisy.
+              Daisy likes to walk across your keyboard while you're away.
+              When you forget to lock your computer,
+              you come home to something like this:
             </p>
             <div class="content-box content-box--grey">
               <p>eiojiojrgjio;fbdiojergkopret490j34j9gidfzkodmps</p>
             </div>
-            <p>Sweet right?</p>
+            <p>Sweet, right?</p>
 
             <p>
-              Anyways, on on particular day you come home to the
-              following on your computer screen.
+              However, one day you come home to the
+              following:
             </p>
 
             <div class="content-box content-box--grey">
@@ -446,7 +484,7 @@
             <p>
               Either Daisy did it, or something fell on your keyboard,
               or a key is jammed, something along those lines.
-              <!-- But we probably wouldn't assume our roomate went onto
+              <!-- But we probably wouldn't assume our roommate went onto
               our computer and typed these random characters. -->
             </p>
 
@@ -467,7 +505,7 @@
               about your poor security skills.
             </p>
 
-            <h4>How do I know this?</h4>
+            <h5>How do I know this?</h5>
             <p>
               It's OBVIOUS to us that the level of information
               given in the last two lines, shows that whoever
@@ -492,7 +530,7 @@
               DNA has this same type of information
             </p>
 
-            <h3 class="numbered">Information in DNA</h3>
+            <h4 class="numbered">Information in DNA</h4>
 
             <p>
               We'll cover some of these in more depth, but here are features of 
@@ -517,7 +555,7 @@
 
             <p>
               Think of this like a 4 letter alphabet, so DNA sequences
-              will look somthing like this, "ATTCACGA".
+              will look something like this, "ATTCACGA".
             </p>
 
             <p>
@@ -558,18 +596,25 @@
             </p>
 
             <p>
-              In each cell DNA has ~6 billion nucleotides 
-              (technically double because each strand of DNA
-              is connected to a reversed version of itself),
-              the # of combinations you can achieve with
+              Almost all cell's DNA have ~6 billion nucleotides 
+              (pairs)
+            </p>
+
+            <p>the # of combinations you can achieve with
               6 billion nucleotides is 4<sup>6,000,000,000</sup>
             </p>
-
+            <p>
+              This is approximately 10<sup>3,850,000,000</sup> -- 
+              
+              <span class="hover-term">(hover for calculations)
+                <span class="hover-info">asdfasfasdfasdfasfasdfasdfasfasdfasdfasfasdfasdfasfasdf</span>
+              </span>
+              
+            </p>
+            
             <p class="under_construction"> show collapsible math</p>
 
-            <p>
-              This is approximately 10<sup>3,850,000,000</sup>
-            </p>
+
             <div class="content-box content-box--blue">
               <strong>Reminder:</strong>
               <ul>
@@ -604,7 +649,12 @@
             </p>
 
 
-            <h3>Complexity of Proteins</h3>
+          <h4 class="numbered">Irreducible Complexity</h4>
+
+          <p> repeat definition</p>
+
+          <p>show that proteins are very complex and not simple</p>
+            <h4>Complexity of Proteins</h4>
 
             <p>
               Also, proteins are not 'simple machines' or 'blobs' that we might think.
@@ -613,49 +663,15 @@
             </p>
 
             <div class="content-box content-box--grey">
-              <p>We show that the ability to bind to other molecules enables 
+              We show that the ability to bind to other molecules enables 
                 proteins to act as catalysts, signal receptors, switches, motors, or tiny pumps. 
                 The examples we discuss in this chapter by no means exhaust the vast functional 
-                repertoire of proteins.</p>
+                repertoire of proteins.
             </div>   
 
-          <h3 class="numbered">Irreducible Complexity</h3>
+          <h5>Bacterial Flagellum</h5>
+          <p>Advanced molecular machine...</p>
 
-          <p>
-            The second is <span class="italic-bold">"Irreducible Complexity"</span>.
-            This is the attribute a system has when the functionality of the system
-            as a whole is dependent on each individual part, and the removal of 
-            even a tiny aspect of the system results in the loss of the 
-            system's function.
-          </p>
-
-
-          <!-- <p>Let's go through an example. You are on a date planned
-            by your lovely spouse, and you see the following 
-            letters in the sand:</p>
-          <div class="interaction">
-            I love you, very much!
-          </div>
-          <p>
-            It's obvious to you that your spouse wrote this for you,
-            and that this didn't come about by the wind and waves
-            shaping making letters on the sand.
-          </p>
-          <p>
-            That would be ridiculous actually, no one would think
-            that's how the letters got there. But why?
-            We'll break this down further in this section         
-          </p> -->
-
-        <!-- <p>
-          Watchmaker, very complex detail / specification
-          that complete some kind of function, is evidence of
-          design / a mind.
-        </p> -->
-
-        <h3 class="numbered">Irreducible Complexity</h3>
-        <p>Bacterial Flagellum</p>
-        <p>advanced</p>
 
 
         <h3 id="cosmology" class="numbered">Cosmology</h3>
@@ -720,10 +736,10 @@ Or just by prior physical states?</p>
 
       <section>
         <h2 id="mind" class="numbered" >Mind</h2>
-          <h3 class="numbered">Consiousness</h3>
+          <h3 class="numbered">Consciousness</h3>
             <p>first person experiences</p>
             <p>if all people in the US acted as a cell in a brain, 
-              consiousness would arise and that group would be a new mind
+              consciousness would arise and that group would be a new mind
             </p>
           <h3 class="numbered">Meaning / Purpose / Value</h3>
             <p>if all matter and universe + life ends</p>
@@ -748,13 +764,14 @@ Or just by prior physical states?</p>
       </section>
       </article>
     </div>
-  </div>
+  </main>
 
 
 
 <!-- Footer -->
 <my-footer></my-footer>
 
+  
 
 </body>
 

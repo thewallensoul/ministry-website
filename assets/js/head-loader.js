@@ -93,11 +93,13 @@ document.addEventListener("DOMContentLoaded", () => {
         script.defer = true;
         document.head.appendChild(script);
     }
+    
 
     loadScript("/assets/js/my-brand-bar.js");
     loadScript("/assets/js/my-navbar.js");
     loadScript("/assets/js/mobile-nav-menu.js");
     loadScript("/assets/js/my-footer.js");
+    loadScript("/assets/js/toc-generator.js");
     
 
     const siteName = "Computing Christianity";

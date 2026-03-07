@@ -6,6 +6,8 @@
 
   { "label": "Discipleship", "url": "/discipleship/home.html" },
 
+  { "label": "Articles", "url": "#" },
+
   { "label": "Library", "url": "/library/home.html" },
 
   { "label": "About", "url": "#" }
