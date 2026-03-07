@@ -814,6 +814,12 @@ gap: 50px;
   padding-bottom: 2vh; */
 }
 
+.main-screen.home {
+  grid-template-columns: minmax(0, 820px);
+  justify-content: center;
+    grid-template-columns: 1fr;
+}
+
 /* =========================
    SIDEBAR TOC
 ========================= */
