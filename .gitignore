@@ -4,3 +4,10 @@ chat.css
 testing.html
 example_article.html
 example_home.html
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
