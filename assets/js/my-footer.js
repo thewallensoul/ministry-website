@@ -26,15 +26,14 @@ class MyFooter extends HTMLElement {
         <li><a href="#">Home</a></li>
         <li><a href="#">Apologetics</a></li>
         <li><a href="#">Theology</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="/pages/about/about_us.html">About</a></li>
       </ul>
     </div>
 
     <div class="footer-column">
       <h4>Connect</h4>
       <ul class="footer-links">
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Email</a></li>
+        <li><a href="mailto:contact@computingchristianity.com">contact@computingchristianity.com</a></li>
       </ul>
     </div>
 
