@@ -1,0 +1,14 @@
+[
+  { "label": "Home", "url": "/index.html" },
+  { "label": "Case For Christianity", "url": "/case_for_christianity/home.html" },
+  { "label": "Apologetics", "url": "/apologetics/home.html" },
+  { "label": "What Is Christianity", "url": "/christianity/home.html" },
+
+  { "label": "Discipleship", "url": "/discipleship/home.html" },
+
+  { "label": "Articles", "url": "#" },
+
+  { "label": "Library", "url": "/library/home.html" },
+
+  { "label": "About", "url": "#" }
+]
