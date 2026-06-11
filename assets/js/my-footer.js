@@ -27,6 +27,7 @@ class MyFooter extends HTMLElement {
         <li><a href="#">Apologetics</a></li>
         <li><a href="#">Theology</a></li>
         <li><a href="/pages/about/about_us.html">About</a></li>
+        <li><a href="/pages/about/privacy-policy.html">Privacy Policy</a></li>
       </ul>
     </div>
 

@@ -30,11 +30,12 @@ class BrandBar extends HTMLElement {
             </div>
         </form>
         </div> 
+        -->
 
         <div class="brand-right">
-             <a href="/donate/home.html" class="donate-button">Donate</a>
+             <a href="/pages/about/support.html" class="donate-button">Support</a>
         </div>
-        -->
+        
   </div>         
     `;
   }

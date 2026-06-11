@@ -1,5 +1,8 @@
 [    
- {"label": "About Us", "url": "/about/about_us.html"},     
+ {"label": "About Us", "url": "/about/home.html"},     
  
- {"label": "Support", "url": "/about/support.html"}   
+ {"label": "Support", "url": "/about/support.html"},
+
+ {"label": "Privacy Policy", "url": "/about/privacy-policy.html"}   
+   
 ]  
