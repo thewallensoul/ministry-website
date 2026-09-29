@@ -40,7 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
   if (hamburger && menu) {
     hamburger.addEventListener("click", () => {
       menu.classList.toggle("open");
-      hamburger.textContent = menu.classList.contains("open") ? "✕" : "☰";
+      const isOpen = menu.classList.contains("open");
+      hamburger.textContent = isOpen ? "✕" : "☰";
+      hamburger.setAttribute("aria-expanded", String(isOpen));
+      hamburger.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
     });
   }
 
@@ -80,6 +83,11 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", () => {
     if (window.innerWidth > 768 && menu) {
       menu.classList.remove("open");
+      if (hamburger) {
+        hamburger.textContent = "☰";
+        hamburger.setAttribute("aria-expanded", "false");
+        hamburger.setAttribute("aria-label", "Open navigation menu");
+      }
     }
   });
 
@@ -90,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function loadScript(src) {
         const script = document.createElement("script");
         script.src = src;
-        script.defer = true;
+        script.async = false;
         document.head.appendChild(script);
     }
     

@@ -54,37 +54,48 @@ function initTOC() {
 
   const links = sidebar.querySelectorAll("a");
 
-  const observer = new IntersectionObserver(entries => {
+  const updateActiveHeading = () => {
+    const activationLine = window.innerHeight * 0.35;
+    let currentHeading = headings[0];
 
-    entries.forEach(entry => {
-
-      if (entry.isIntersecting) {
-
-        links.forEach(link => link.classList.remove("active"));
-
-        const activeLink =
-          sidebar.querySelector(`a[href="#${entry.target.id}"]`);
-
-        if (activeLink) {
-          activeLink.classList.add("active");
-
-          /* keep active item visible in sidebar */
-          activeLink.scrollIntoView({
-            block: "nearest",
-            behavior: "smooth"
-          });
-        }
-
+    headings.forEach(heading => {
+      if (heading.getBoundingClientRect().top <= activationLine) {
+        currentHeading = heading;
       }
-
     });
 
-  }, {
-    rootMargin: "-40% 0px -55% 0px",
-    threshold: 0
-  });
+    links.forEach(link => {
+      link.classList.remove("active");
+      link.removeAttribute("aria-current");
+    });
 
-  headings.forEach(h => observer.observe(h));
+    const activeLink = sidebar.querySelector(`a[href="#${currentHeading.id}"]`);
+    if (!activeLink) return;
+
+    activeLink.classList.add("active");
+    activeLink.setAttribute("aria-current", "location");
+
+    const sidebarBounds = sidebar.getBoundingClientRect();
+    const linkBounds = activeLink.getBoundingClientRect();
+
+    if (linkBounds.top < sidebarBounds.top) {
+      sidebar.scrollTop -= sidebarBounds.top - linkBounds.top;
+    } else if (linkBounds.bottom > sidebarBounds.bottom) {
+      sidebar.scrollTop += linkBounds.bottom - sidebarBounds.bottom;
+    }
+  };
+
+  let updateScheduled = false;
+  window.addEventListener("scroll", () => {
+    if (updateScheduled) return;
+    updateScheduled = true;
+    window.requestAnimationFrame(() => {
+      updateScheduled = false;
+      updateActiveHeading();
+    });
+  }, { passive: true });
+  window.addEventListener("resize", updateActiveHeading);
+  updateActiveHeading();
 }
 
 if (document.readyState === "loading") {

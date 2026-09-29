@@ -1,0 +1,16 @@
+{
+  "name": "computing-christianity-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "predev": "node scripts/prepare-public-files.mjs",
+    "dev": "astro dev",
+    "prebuild": "node scripts/prepare-public-files.mjs",
+    "build": "astro build && node scripts/copy-static-site.mjs",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^8.0.2",
+    "astro": "^7.3.5"
+  }
+}

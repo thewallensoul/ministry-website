@@ -4,3 +4,7 @@ chat.css
 testing.html
 example_article.html
 example_home.html
+node_modules/
+dist/
+.astro/
+public/

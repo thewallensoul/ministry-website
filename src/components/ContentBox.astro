@@ -1,0 +1,7 @@
+---
+const { tone = 'grey' } = Astro.props;
+---
+
+<div class:list={['content-box', `content-box--${tone}`]}>
+  <slot />
+</div>
