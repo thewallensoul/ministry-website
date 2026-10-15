@@ -50,206 +50,37 @@
 
         <hr />
 
-        <h2>Support Type</h2>
+        <h2>Give with PayPal</h2>
 
-        <label>
-          <input type="radio" name="giftType" value="one_time" checked />
-          One-Time Support
-        </label>
+        <p>Choose your contribution in the PayPal window.</p>
 
-        <br />
-
-        <label>
-          <input type="radio" name="giftType" value="monthly" />
-          Monthly Partnership
-        </label>
-
-        <br />
-
-        <label>
-          <input type="radio" name="giftType" value="annual" />
-          Annual Partnership
-        </label>
-
-        <hr />
-
-        <h2>Amount</h2>
-
-        <div id="amount-options">
-          <!-- Filled by JavaScript later -->
+        <div id="donate-button-container">
+          <div id="donate-button">
+            <!-- Filled by JavaScript later -->
+          </div>
         </div>
-
-        <hr />
-
-        <label>
-          <input type="checkbox" id="newsletterOptIn" checked />
-          Receive ministry updates
-        </label>
-
-        <hr />
-
-        <button id="give-support-button">Give Support</button>
-
-        <button id="manage-giving-button">Manage Giving</button>
       </div>
     </div>
 
+    <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
     <script>
-      const checkoutUrl =
-        "https://jjtbsfpeinhjjibckbqu.supabase.co/functions/v1/create-checkout-session";
+      //   const portalUrl =
+      //     "https://billing.stripe.com/p/login/test_fZufZi8PxffJaDw0sM4Ja00";
 
-    //   const portalUrl =
-    //     "https://billing.stripe.com/p/login/test_fZufZi8PxffJaDw0sM4Ja00";
-        const portalUrl =
-        "https://billing.stripe.com/p/login/8x200kf4E7Qa5Um4c79oc00";    
-
-      const amountOptions = document.getElementById("amount-options");
-
-      const amounts = {
-        one_time: [25, 50, 100],
-        monthly: [25, 50, 100, 200],
-        annual: [500, 1000, 2000, 3000],
-      };
-
-      function renderAmounts(giftType) {
-        amountOptions.innerHTML = "";
-
-        amounts[giftType].forEach((amount) => {
-          amountOptions.insertAdjacentHTML(
-            "beforeend",
-            `
-                <label>
-                    <input
-                        type="radio"
-                        name="amount"
-                        value="${amount}"
-                    >
-                    $${amount}
-                </label>
-                <br>
-                `,
-          );
-        });
-
-        amountOptions.insertAdjacentHTML(
-          "beforeend",
-          `
-            <label>
-                <input
-                    type="radio"
-                    name="amount"
-                    value="custom"
-                >
-                Custom Amount
-            </label>
-
-            <br><br>
-
-            <input
-                type="number"
-                id="custom-amount"
-                placeholder="Enter amount"
-                min="1"
-                step="0.01"
-                style="display:none;"
-            >
-            `,
-        );
-
-        attachCustomAmountListener();
-      }
-
-      function attachCustomAmountListener() {
-        const amountRadios = document.querySelectorAll('input[name="amount"]');
-
-        const customAmount = document.getElementById("custom-amount");
-
-        amountRadios.forEach((radio) => {
-          radio.addEventListener("change", () => {
-            customAmount.style.display =
-              radio.value === "custom" && radio.checked ? "block" : "none";
-          });
-        });
-      }
-
-      async function startCheckout() {
-        const giftType = document.querySelector(
-          'input[name="giftType"]:checked',
-        )?.value;
-
-        const amountSelection = document.querySelector(
-          'input[name="amount"]:checked',
-        );
-
-        if (!amountSelection) {
-          alert("Please select an amount.");
-          return;
-        }
-
-        let amount;
-
-        if (amountSelection.value === "custom") {
-          const customAmount = document.getElementById("custom-amount");
-
-          const dollars = Number(customAmount.value);
-
-          if (!dollars || dollars <= 0) {
-            alert("Please enter a valid amount.");
-            return;
-          }
-
-          amount = Math.round(dollars * 100);
-        } else {
-          amount = Number(amountSelection.value) * 100;
-        }
-
-        const newsletterOptIn =
-          document.getElementById("newsletterOptIn").checked;
-
-        try {
-          const response = await fetch(checkoutUrl, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              giftType,
-              amount,
-              newsletterOptIn,
-            }),
-          });
-
-          const data = await response.json();
-
-          if (!response.ok) {
-            throw new Error(data.error || "Checkout failed");
-          }
-
-          window.location.href = data.url;
-        } catch (error) {
-          console.error(error);
-
-          alert("Unable to start checkout.");
-        }
-      }
-
-      document.querySelectorAll('input[name="giftType"]').forEach((radio) => {
-        radio.addEventListener("change", (e) => {
-          renderAmounts(e.target.value);
-        });
-      });
-
-      renderAmounts("one_time");
-
-      document
-        .getElementById("give-support-button")
-        .addEventListener("click", startCheckout);
-
-      document
-        .getElementById("manage-giving-button")
-        .addEventListener("click", () => {
-          window.location.href = portalUrl;
-        });
+      PayPal.Donation.Button({
+        env: "production",
+        hosted_button_id: "SB3D6N9V8MPRU",
+        return: "https://www.computingchristianity.com/pages/about/support/thank-you",
+        cancel_return: "https://www.computingchristianity.com/pages/about/support/cancel",
+        image: {
+          src: "https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif",
+          alt: "Donate with PayPal button",
+          title: "PayPal - The safer, easier way to pay online!",
+        },
+        onComplete: function () {
+          window.location.href = "/pages/about/support/thank-you";
+        },
+      }).render("#donate-button");
     </script>
 
     <!-- Footer -->
