@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>About Us</title>
+    <title>Support</title>
     <script src="/assets/js/head-loader.js"></script>
     <link rel="stylesheet" href="/assets/css/actual.css" />
 
@@ -35,30 +35,44 @@
 
     </header>
 
-    <div class="main-screen home">
+    <div class="main-screen home ministry-page">
       <!-- <sub-topics></sub-topics> -->
       <div class="main-content">
-        <h1>Support Computing Christianity</h1>
+        <h1 class="underline">Support Computing Christianity</h1>
 
         <p>
-          Support the ministry through an individual gift or ongoing partnership.
+          Your support helps us teach people who Jesus is, why Christianity is
+          true, and how to live and think biblically.
         </p>
-        <p class="content-box content-box--grey">
-            Computing Christianity is not a 501c3 non-profit, and financial support 
-            contributions are not charitable tax-deductible donations.
+
+        <h2 class="underline">What your support makes possible</h2>
+        <p>
+          Matthew is training and raising support to serve as a Ratio Christi
+          chapter director. Lord willing, we plan to start a college club at OC
+          in spring 2027. Your gifts help cover our living expenses as we prepare
+          for full-time ministry and provide food for students at the club.
+        </p>
+        <p>
+          We are also building free videos and articles through Computing
+          Christianity for people exploring the faith and Christians seeking
+          to grow in it. <a href="/pages/about/home.html">Read more about us</a>.
         </p>
 
         <hr />
 
-        <h2>Give with PayPal or Venmo</h2>
+        <h2>Give with PayPal</h2>
 
-        <p>Choose your contribution in the PayPal window.</p>
+        <p>You can give once, monthly, or yearly.</p>
 
         <div id="donate-button-container">
-          <div id="donate-button">
+          <div id="donate-button" role="button" tabindex="0" aria-label="Give with PayPal">
             <!-- Filled by JavaScript later -->
           </div>
         </div>
+        <p class="support-tax-note">
+          <strong>Tax note:</strong> Computing Christianity is not a 501(c)(3)
+          organization. Contributions are not tax-deductible as charitable donations.
+        </p>
       </div>
     </div>
 
@@ -73,14 +87,22 @@
         return: "https://www.computingchristianity.com/pages/about/support/thank-you",
         cancel_return: "https://www.computingchristianity.com/pages/about/support/cancel",
         image: {
-          src: "https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif",
-          alt: "Donate with PayPal button",
-          title: "PayPal - The safer, easier way to pay online!",
+          src: new URL("/assets/images/donate-paypal.svg", window.location.href).href,
+          alt: "Give with PayPal",
+          title: "Give with PayPal",
         },
         onComplete: function () {
           window.location.href = "/pages/about/support/thank-you";
         },
       }).render("#donate-button");
+
+      document.querySelector("#donate-button-container > #donate-button")
+        .addEventListener("keydown", function (event) {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            this.querySelector("img")?.click();
+          }
+        });
     </script>
 
     <!-- Footer -->

@@ -152,6 +152,12 @@
 
 
 <script>
+  const siteHeader = document.querySelector(".site-header");
+  const heroWrapper = document.querySelector(".landing-page-hero-wrapper");
+  new ResizeObserver(() => {
+    heroWrapper.style.setProperty("--header-height", `${siteHeader.offsetHeight}px`);
+  }).observe(siteHeader);
+
   const words = ["Jesus", "The Bible", "Truth", "Evidence", "Theology"];
   let index = 0;
   const rotatingWord = document.getElementById("rotating-word");
