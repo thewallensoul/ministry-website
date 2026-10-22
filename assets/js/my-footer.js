@@ -23,10 +23,10 @@ class MyFooter extends HTMLElement {
     <div class="footer-column">
       <h4>Explore</h4>
       <ul class="footer-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Apologetics</a></li>
-        <li><a href="#">Theology</a></li>
-        <li><a href="/pages/about/about_us.html">About</a></li>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/pages/apologetics/home.html">Apologetics</a></li>
+        <li><a href="/pages/christianity/home.html">Theology</a></li>
+        <li><a href="/pages/about/home.html">About</a></li>
         <li><a href="/pages/about/privacy-policy.html">Privacy Policy</a></li>
       </ul>
     </div>

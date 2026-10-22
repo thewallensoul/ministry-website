@@ -48,8 +48,8 @@
         <h2 class="underline">What your support makes possible</h2>
         <p>
           Matthew is training and raising support to serve as a Ratio Christi
-          chapter director. Lord willing, we plan to start a college club at OC
-          in spring 2027. Your gifts help cover our living expenses as we prepare
+          chapter director. Lord willing, we plan to start a college club at Oklahoma Christian (OC)
+          in Spring or Fall 2027. Your gifts help cover our living expenses as we prepare
           for full-time ministry and provide food for students at the club.
         </p>
         <p>
@@ -58,21 +58,108 @@
           to grow in it. <a href="/pages/about/home.html">Read more about us</a>.
         </p>
 
-        <hr />
+        <section
+          class="support-progress"
+          id="monthly-support-progress"
+          hidden
+          aria-labelledby="monthly-support-heading"
+        >
+          <h2 class="underline" id="monthly-support-heading">
+            Monthly support progress
+          </h2>
+          <p id="monthly-support-amount"></p>
+          <progress
+            id="monthly-support-meter"
+            max="1"
+            value="0"
+            aria-label="Progress toward monthly support goal"
+          ></progress>
+          <p class="support-progress-updated" id="monthly-support-updated"></p>
+        </section>
 
-        <h2>Give with PayPal</h2>
+        <script>
+          // Update these dollar values and date when you refresh the public total.
+          // Enter plain numbers without a $ sign or commas.
+          // Monthly total = active monthly gifts + one-twelfth of active annual gifts.
+          const monthlySupportCommitted = 0;
+          const monthlySupportGoal = 65_000;
+          const monthlySupportUpdatedAt = "2026-12-10"; // Use YYYY-MM-DD.
 
-        <p>You can give once, monthly, or yearly.</p>
+          const supportProgress = document.getElementById("monthly-support-progress");
+          const supportMeter = document.getElementById("monthly-support-meter");
+          const supportAmount = document.getElementById("monthly-support-amount");
+          const supportUpdated = document.getElementById("monthly-support-updated");
 
-        <div id="donate-button-container">
-          <div id="donate-button" role="button" tabindex="0" aria-label="Give with PayPal">
-            <!-- Filled by JavaScript later -->
+          if (
+            Number.isFinite(monthlySupportCommitted) &&
+            monthlySupportCommitted >= 0 &&
+            Number.isFinite(monthlySupportGoal) &&
+            monthlySupportGoal > 0 &&
+            /^\d{4}-\d{2}-\d{2}$/.test(monthlySupportUpdatedAt)
+          ) {
+            const formatCurrency = new Intl.NumberFormat("en-US", {
+              style: "currency",
+              currency: "USD",
+              maximumFractionDigits: 2,
+            });
+            const updatedDate = new Date(`${monthlySupportUpdatedAt}T00:00:00`);
+
+            supportMeter.max = monthlySupportGoal;
+            supportMeter.value = Math.min(monthlySupportCommitted, monthlySupportGoal);
+            supportAmount.textContent =
+              `${formatCurrency.format(monthlySupportCommitted)} / ${formatCurrency.format(monthlySupportGoal)} per month`;
+            supportUpdated.textContent =
+              `Updated ${updatedDate.toLocaleDateString("en-US", {
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+              })}`;
+            supportProgress.hidden = false;
+          }
+        </script>
+
+        <section class="card-section support-options" aria-labelledby="support-options-heading">
+          <h2 class="underline" id="support-options-heading">Ways to support</h2>
+          <div class="card-grid">
+            <section class="card support-option" aria-labelledby="giving-heading">
+              <div>
+                <h3 id="giving-heading">Give with PayPal or Venmo</h3>
+                <p>One-time, monthly, or yearly gifts.</p>
+              </div>
+
+              <div>
+                <div id="donate-button-container">
+                  <div id="donate-button" role="button" tabindex="0" aria-label="Give now">
+                    <!-- Filled by JavaScript later -->
+                  </div>
+                </div>
+                <p class="support-tax-note">
+                  <strong>Tax note:</strong> Computing Christianity is not a 501(c)(3)
+                  organization. Contributions are not tax-deductible as charitable donations.
+                </p>
+              </div>
+            </section>
+
+            <section class="card support-option" aria-labelledby="newsletter-heading">
+              <div>
+                <h3 id="newsletter-heading">Subscribe to our newsletter</h3>
+                <p>Get updates from Computing Christianity by email.</p>
+              </div>
+              <div>
+                <script
+                  async
+                  data-uid="82cfa299c3"
+                  src="https://computing-christianity.kit.com/82cfa299c3/index.js"
+                ></script>
+                <a
+                  class="newsletter-signup-link"
+                  data-formkit-toggle="82cfa299c3"
+                  href="https://computing-christianity.kit.com/82cfa299c3"
+                >Join the newsletter</a>
+              </div>
+            </section>
           </div>
-        </div>
-        <p class="support-tax-note">
-          <strong>Tax note:</strong> Computing Christianity is not a 501(c)(3)
-          organization. Contributions are not tax-deductible as charitable donations.
-        </p>
+        </section>
       </div>
     </div>
 
@@ -88,8 +175,8 @@
         cancel_return: "https://www.computingchristianity.com/pages/about/support/cancel",
         image: {
           src: new URL("/assets/images/donate-paypal.svg", window.location.href).href,
-          alt: "Give with PayPal",
-          title: "Give with PayPal",
+          alt: "Give now",
+          title: "Give now",
         },
         onComplete: function () {
           window.location.href = "/pages/about/support/thank-you";

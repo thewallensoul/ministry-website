@@ -4,7 +4,7 @@ class MobileNav extends HTMLElement {
 
     const main = await getNav("main");
 
-    let html = '';
+    let html = "";
 
     for (const item of main) {
 
@@ -35,6 +35,12 @@ class MobileNav extends HTMLElement {
       }
 
     }
+
+    html += `
+      <a class="mobile-single mobile-support" href="/pages/about/support.html">
+        Support
+      </a>
+    `;
 
     this.innerHTML = html;
 
