@@ -9,7 +9,7 @@ class BrandBar extends HTMLElement {
     this.innerHTML = `           
     <div class="brand-bar">   
         <a href="/index.html" class="brand-left">
-            <img src="/assets/images/logo4.png" alt="Computing Christ Logo" class="brand-logo">
+            <img src="/assets/images/logo_small_diagonal.png" alt="Computing Christ Logo" class="brand-logo">
             <span class="brand-name">Computing Christianity</span>
         </a>        
         
