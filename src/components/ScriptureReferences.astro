@@ -1,0 +1,71 @@
+---
+interface Props {
+  citations: string;
+}
+
+const { citations } = Astro.props;
+
+const bookCodes: Record<string, string> = {
+  "1 Corinthians": "1co",
+  "2 Corinthians": "2co",
+  "1 Thessalonians": "1th",
+  "2 Thessalonians": "2th",
+  "1 Timothy": "1ti",
+  "2 Timothy": "2ti",
+  "1 Peter": "1pe",
+  "2 Peter": "2pe",
+  "1 John": "1jo",
+  "2 John": "2jo",
+  "3 John": "3jo",
+  "Genesis": "gen",
+  "Exodus": "exo",
+  "1 Kings": "1ki",
+  "Micah": "mic",
+  "Deuteronomy": "deu",
+  "Isaiah": "isa",
+  "Mark": "mrk",
+  "Matthew": "mat",
+  "John": "jhn",
+  "Colossians": "col",
+  "Psalm": "psa",
+  "James": "jas",
+  "Revelation": "rev",
+  "Jeremiah": "jer",
+  "Malachi": "mal",
+  "Romans": "rom",
+  "Nehemiah": "neh",
+  "Hebrews": "heb",
+  "Ephesians": "eph",
+  "Acts": "act",
+  "Luke": "luk",
+  "Philippians": "php",
+  "Titus": "tit",
+  "Galatians": "gal",
+  "Ezekiel": "ezk",
+};
+
+const bookNames = Object.keys(bookCodes).sort((a, b) => b.length - a.length);
+const references = citations.split(";").map((citation) => {
+  const reference = citation.trim();
+  const book = bookNames.find((name) => reference.startsWith(`${name} `));
+  const chapter = book
+    ? reference.slice(book.length).trim().match(/^(\d+):/)?.[1]
+    : undefined;
+
+  return {
+    reference,
+    href: book && chapter
+      ? `https://www.blueletterbible.org/esv/${bookCodes[book]}/${chapter}/`
+      : undefined,
+  };
+});
+---
+
+<span class="scripture-references">
+  {references.map(({ reference, href }, index) => (
+    <>
+      {index > 0 && "; "}
+      {href ? <a href={href} target="_blank" rel="noopener noreferrer">{reference}</a> : reference}
+    </>
+  ))}
+</span>

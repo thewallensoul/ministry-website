@@ -4,27 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/assets/images/logo_small_diagonal.png" />
-    <title>Jang Apologetics</title>
-    <script src="/assets/js/my-navbar.js" defer></script>
+    <title>Scripture to Know</title>
+    <script src="/assets/js/head-loader.js"></script>
     <link rel="stylesheet" href="/assets/css/actual.css" />
   </head>
 
   
-  <header>
-    <div class="top_nav_section">
-      <my-navbar section="main"></my-navbar>
-      <my-navbar section="christianity" class="secondary"></my-navbar>
-      <!-- <secondary-nav section="apologetics"></secondary-nav> -->
-    </div>
-  </header>
-
   <body>
-    <div class="main-screen">
+    <header class="site-header">
+      <my-brand-bar></my-brand-bar>
+      <nav class="desktop-nav"><my-navbar section="main" class="primary"></my-navbar><my-navbar section="christianity" class="secondary"></my-navbar></nav>
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+      <nav class="mobile-nav" id="mobile-nav"><mobile-nav-menu></mobile-nav-menu></nav>
+    </header>
+    <div class="main-screen home">
       <div class="main-content">
         <article>
-          <h1>Welcome To Christianity! </h1>
+          <h1 class="underline">Scripture to Know</h1>
+          <p>Placeholder for selected passages to learn, with context, memorization ideas, and ways to reflect on them.</p>
         </article>
       </div>
     </div>
+    <my-footer></my-footer>
   </body>
 </html>

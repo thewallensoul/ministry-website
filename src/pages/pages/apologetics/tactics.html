@@ -5,24 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/assets/images/logo_small_diagonal.png" />
     <title>Jang Apologetics</title>
-    <script src="/assets/js/my-navbar.js" defer></script>
-    <script src="/assets/js/my-brand-bar.js" defer></script>
-    <!-- <script src="../my-navbar.js" defer></script> -->
+    <script src="/assets/js/head-loader.js"></script>
     <link rel="stylesheet" href="/assets/css/actual.css" />
   </head>
 
   <body>
     <header class="site-header">
       <my-brand-bar></my-brand-bar>
-      <my-navbar section="main" class="primary"></my-navbar>
-      <my-navbar section="apologetics" class="secondary"></my-navbar>
+      <nav class="desktop-nav">
+        <my-navbar section="main" class="primary"></my-navbar>
+        <my-navbar section="apologetics" class="secondary"></my-navbar>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+      <nav class="mobile-nav" id="mobile-nav"><mobile-nav-menu></mobile-nav-menu></nav>
     </header>
     <div class="main-screen">
       <!-- <sub-topics></sub-topics> -->
       <div class="main-content">
-        <h1>Welcome to Tactics</h1>
+        <h1 class="underline">Apologetics Tactics and Skills</h1>
+        <p>Practical tools for listening carefully, asking good questions, and helping conversations move toward the most important issues.</p>
+        <p>Resource outline in development. This section will explain each skill and show how to use it with humility and care.</p>
+        <p>See the <a href="/pages/apologetics/conversations.html">conversation guides</a> for examples of these skills in practice.</p>
       
       </div>
     </div>
+    <my-footer></my-footer>
   </body>
 </html>

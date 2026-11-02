@@ -12,12 +12,17 @@
 - Do not build a test suite unless explicitly requested. You may perform a reasonable functionality check, and should state what was and was not verified.
 - Follow OWASP Top 10 principles. Report any security concern found.
 
+## Material
+- Never rewrite or reword the material unless explicitly instructed to do so. You can help me reorder and design and initially write, but when refactoring or doing css or building etc. do not rewrite material that's already finished.
+
 ## Frontend
 
+- Before editing files under `public/assets`, inspect `scripts/prepare-public-files.mjs`. It copies the source `assets/` directory into `public/assets/` and overwrites generated copies, so make asset changes in `assets/` and verify the preparation/build step regenerates `public/`.
 - Preserve the site's visual style, spacing, and component patterns.
 - Reuse existing CSS variables, components, and layouts. Do not introduce a new design system or styling approach for a localized change.
 - Preserve the existing custom CSS, color palette, and `.html` URLs unless the user approves a broader change.
 - Preserve supplied wording; make only small presentation edits unless broader editorial changes are requested.
+- If I ask you to add things (written or other), use the .chatgpt css class, even in mdx files, that way i can identify what you've added and only remove the class after I've proofread your work.
 
 ## Repository Boundaries
 

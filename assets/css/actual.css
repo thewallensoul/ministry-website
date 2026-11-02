@@ -664,6 +664,24 @@ my-navbar {
   color: var(--accent)
 }
 
+.scripture-references a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.scripture-references a:hover,
+.scripture-references a:focus-visible {
+  color: var(--dark-grey);
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.scripture-references a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 .table-of-contents h1 {
   margin-top: 0;
   border-bottom: 2px solid var(--dark-grey);
@@ -920,7 +938,9 @@ section ul {
   left: 50%;
   transform: translateX(-50%) translateY(6px);
 
+  width: min(22rem, calc(100vw - 4rem));
   max-width: 400px;
+  box-sizing: border-box;
   white-space: normal;
   overflow-wrap: break-word;
 
@@ -934,10 +954,12 @@ section ul {
   line-height: 1.4;
 
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
 
   transition:
     opacity 0.18s ease,
+    visibility 0.18s ease,
     transform 0.18s ease;
 
   box-shadow: 0 8px 18px rgba(0,0,0,0.25);
@@ -946,14 +968,73 @@ section ul {
 }
 
 /* Show tooltip */
-.hover-term:hover .hover-info {
+.hover-term:hover .hover-info,
+.hover-term:focus .hover-info,
+.hover-term:focus-within .hover-info {
   opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
   transform: translateX(-50%) translateY(0);
+}
+
+.hover-term:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+.hover-info a,
+.hover-info a:visited {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration-color: rgba(200, 140, 90, 0.65);
+  text-underline-offset: 0.15em;
+}
+
+.hover-info a:hover,
+.hover-info a:focus-visible {
+  color: #fff;
+  text-decoration-color: currentColor;
+}
+
+.hover-info a:focus-visible {
+  outline: 2px solid var(--hover);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.tooltip-prompt {
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.hover-info .tooltip-bullet {
+  display: block;
+  margin: 0 0 0.45rem;
+  font-size: inherit;
+}
+
+.hover-info .tooltip-bullet:last-child {
+  margin-bottom: 0;
+}
+
+.hover-info .tooltip-bullet::before {
+  content: "• ";
 }
 
 .hover-term:hover {
   background: rgba(120,165,255,0.08);
   border-radius: 3px;
+}
+
+.hover-info::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 12px;
+  pointer-events: auto;
 }
 
 .hover-info::after {
@@ -1055,6 +1136,29 @@ blockquote {
 /* =========================
    SIDEBAR TOC
 ========================= */
+.main-content article details.title-disclosure {
+  margin: 0.65rem 0;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid rgba(32, 35, 38, 0.16);
+  border-radius: 8px;
+  background: var(--box-grey-bg);
+}
+
+.main-content article details.title-disclosure > summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.main-content article details.title-disclosure > summary:focus-visible {
+  outline: 2px solid var(--hover);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+.main-content article details.title-disclosure[open] > summary {
+  margin-bottom: var(--spacing-xs);
+}
+
 #toc-sidebar-title {
   font-size: .8rem;
   letter-spacing: .08em;

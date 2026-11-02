@@ -1,6 +1,8 @@
 [
   { "label": "Home", "url": "/index.html" },
-  { "label": "Case For Christianity", "url": "/case_for_christianity/home.html" },
-
-  { "label": "About Us", "url": "/about/home.html" }
+  { "label": "Case for Christianity", "url": "/case_for_christianity/home.html" },
+  { "label": "Christianity", "url": "/christianity/home.html" },
+  { "label": "Apologetics & Conversations", "url": "/apologetics/home.html" },
+  { "label": "Other Religions", "url": "/other_religions/home.html" },
+  { "label": "About", "url": "/about/home.html" }
 ]

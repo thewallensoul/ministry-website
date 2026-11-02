@@ -1,0 +1,15 @@
+---
+interface Props {
+  id: string;
+  className?: string;
+}
+
+const { id, className = "" } = Astro.props;
+---
+
+<span class:list={["hover-term", className]} tabindex="0" aria-describedby={id}>
+  <slot />
+  <span id={id} class="hover-info" role="tooltip">
+    <slot name="tooltip" />
+  </span>
+</span>

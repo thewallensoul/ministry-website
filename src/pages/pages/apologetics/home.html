@@ -1,81 +1,37 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="/assets/images/logo_small_diagonal.png" />
-  <title>Computing Christ</title>
-  <script src="/assets/js/my-navbar.js" defer></script>
-  <script src="/assets/js/my-brand-bar.js" defer></script>
-  <!-- <script src="../my-navbar.js" defer></script> -->
-  <link rel="stylesheet" href="/assets/css/actual.css" />
-</head>
-
-<body>
-  <header class="site-header">
-    <my-brand-bar></my-brand-bar>
-    <my-navbar section="main" class="primary"></my-navbar>
-    <my-navbar section="apologetics" class="secondary"></my-navbar>
-  </header>
-  
-  <div class="main-screen">
-    <!-- <sub-topics></sub-topics> -->
-    <div class="main-content">
-      <h1>Welcome to Apologetics!</h1>
-      <p>Apologetics is learning about the evidence
-        for a belief, and how to defend it.</p>
-
-      <p>In these pages you'll learn apologetics for Christianity.
-      </p>
-      
-      <div class="objection">
-        <strong>Note:</strong> This will be more in depth than the
-        "Case For Christianity" pages, and cover more objections.
-      </div>
-
-      <p>These pages are meant to be more of a 'look up when needed', not necessarily read all in one sitting</p>
-
-    </div>
-  </div>
-
-  <footer class="site-footer">
-
-    <div class="footer-container">
-
-      <div class="footer-column">
-        <h1 class="footer-title">Computing Christ</h3>
-          <p class="footer-tagline">
-            Thinking clearly about Christ through Scripture,
-            philosophy, and historical evidence.
-          </p>
-      </div>
-
-      <div class="footer-column">
-        <h4>Explore</h4>
-        <ul class="footer-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Apologetics</a></li>
-          <li><a href="#">Theology</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-column">
-        <h4>Connect</h4>
-        <ul class="footer-links">
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Email</a></li>
-        </ul>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      © 2026 Matthew Jang
-    </div>
-
-  </footer>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/assets/images/logo_small_diagonal.png" />
+    <title>Apologetics &amp; Conversations</title>
+    <script src="/assets/js/head-loader.js"></script>
+    <link rel="stylesheet" href="/assets/css/actual.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <my-brand-bar></my-brand-bar>
+      <nav class="desktop-nav"><my-navbar section="main" class="primary"></my-navbar><my-navbar section="apologetics" class="secondary"></my-navbar></nav>
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+      <nav class="mobile-nav" id="mobile-nav"><mobile-nav-menu></mobile-nav-menu></nav>
+    </header>
+    <div class="main-screen home"><main class="main-content">
+      <section class="section-hero">
+        <h1 class="underline">Apologetics &amp; Conversations</h1>
+        <p class="chatgpt">Christian apologetics is the practice of giving thoughtful reasons for Christian belief and responding to questions about Christianity. These resources help you think carefully and discuss faith with patience, clarity, and respect.</p>
+        <p>The Case for Christianity section presents the positive case. This section focuses on questions, objections, and putting conversation skills into practice.</p>
+      </section>
+      <section class="card-section">
+        <h2 class="underline">Find a starting point</h2>
+        <div class="card-grid">
+          <a class="card chatgpt" href="/pages/case_for_christianity/home.html"><h3>Looking for evidence?</h3><p>Explore the positive case for Christianity, including arguments for God, Jesus, and the Bible.</p><span class="card-link">Visit Case for Christianity →</span></a>
+          <a class="card" href="/pages/apologetics/objections.html"><h3>Working through a question?</h3><p>Explore questions and challenges people raise about Christianity.</p><span class="card-link">Common objections →</span></a>
+          <a class="card" href="/pages/apologetics/tactics.html"><h3>Tactics and skills</h3><p>Questions and practical tools for thoughtful conversations.</p><span class="card-link">Explore →</span></a>
+          <a class="card" href="/pages/apologetics/conversations.html"><h3>Conversation guides</h3><p>See conversation skills used in sample discussions and guides.</p><span class="card-link">Explore →</span></a>
+          <a class="card chatgpt" href="/pages/apologetics/defensive.html"><h3>Defensive Apologetics</h3><p>Explore historical evidence and responses to challenges to Christian belief.</p><span class="card-link">Explore →</span></a>
+        </div>
+      </section>
+    </main></div>
+    <my-footer></my-footer>
+  </body>
 </html>
