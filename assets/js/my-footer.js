@@ -13,7 +13,7 @@ class MyFooter extends HTMLElement {
   <div class="footer-container">
 
     <div class="footer-column">
-      <h1 class="footer-title">Computing Christ</h1>
+      <h1 class="footer-title">Computing Christianity</h1>
       <p class="footer-tagline">
         Thinking clearly about Christ through Scripture,
         Philosophy, Science, and Evidence.
@@ -24,9 +24,16 @@ class MyFooter extends HTMLElement {
       <h4>Explore</h4>
       <ul class="footer-links">
         <li><a href="/index.html">Home</a></li>
-        <li><a href="/pages/apologetics/home.html">Apologetics</a></li>
-        <li><a href="/pages/christianity/home.html">Theology</a></li>
-        <li><a href="/pages/about/home.html">About</a></li>
+        <li><a href="/pages/case_for_christianity/home.html">Case for Christianity</a></li>
+        <li><a href="/pages/christianity/home.html">Christianity</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>About</h4>
+      <ul class="footer-links">
+        <li><a href="/pages/about/home.html">About Us</a></li>
+        <li><a href="/pages/about/support.html">Support</a></li>
         <li><a href="/pages/about/privacy-policy.html">Privacy Policy</a></li>
       </ul>
     </div>

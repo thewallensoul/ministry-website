@@ -12,6 +12,12 @@
 - Do not build a test suite unless explicitly requested. You may perform a reasonable functionality check, and should state what was and was not verified.
 - Follow OWASP Top 10 principles. Report any security concern found.
 
+## Scope and communication
+
+- Do not change the layout, width, alignment, spacing, or other styling of existing content unless the user asked for that specific change. Treat CSS-only changes to existing content as scope changes too.
+- Keep new selectors scoped to the requested page or component. Do not add broad selectors that alter other content as a side effect.
+- In the final summary, explicitly disclose every CSS/layout change and identify which pages or components it affects. A `.chatgpt` marker does not replace reporting the change.
+
 ## Material
 - Never rewrite or reword the material unless explicitly instructed to do so. You can help me reorder and design and initially write, but when refactoring or doing css or building etc. do not rewrite material that's already finished.
 
