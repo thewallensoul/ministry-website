@@ -93,8 +93,12 @@
             ></progress>
             <p class="support-progress-updated" id="monthly-support-updated"></p>
             <p class="support-progress-note">
-              Includes recurring monthly gifts and one-twelfth of annual recurring gifts;
-              one-time gifts are not included.
+              <span class="hover-term" tabindex="0" aria-describedby="support-gifts-tooltip">
+                What about one-time and yearly gifts?
+                <span class="hover-info" id="support-gifts-tooltip" role="tooltip">
+                  Recurring annual gifts and one-time gifts are divided by 12 and added to the monthly goal.
+                </span>
+              </span>
             </p>
           </section>
         </div>
@@ -103,7 +107,7 @@
           // Update these dollar values and date when you refresh the public total.
           // Enter plain numbers without a $ sign or commas.
           // Monthly total = active monthly gifts + one-twelfth of active annual gifts.
-          const monthlySupportCommitted = 206.46;
+          const monthlySupportCommitted = 215.17;
           const monthlySupportGoal = 5417;
           const monthlySupportUpdatedAt = "2026-11-05"; // Use YYYY-MM-DD.
 
@@ -131,8 +135,8 @@
             supportAmount.textContent =
               `${formatCurrency.format(monthlySupportCommitted)} / ${formatCurrency.format(monthlySupportGoal)} per month`;
             supportUpdated.textContent =
-              `Updated ${updatedDate.toLocaleDateString("en-US", {
-                month: "long",
+              `Updates once daily - last updated ${updatedDate.toLocaleDateString("en-US", {
+                month: "short",
                 day: "numeric",
                 year: "numeric",
               })}`;
