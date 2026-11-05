@@ -39,7 +39,7 @@
     <div class="main-screen home page-width-wide">
       <!-- <sub-topics></sub-topics> -->
       <div class="main-content">
-        <h1 class="underline">Support Computing Christianity</h1>
+        <h1 class="underline">Support Matthew & Faith</h1>
 
         <p>
           Your support helps us teach people who Jesus is, why Christianity is
@@ -56,35 +56,48 @@
         <p>
           We are also building free videos and articles through Computing
           Christianity for people exploring the faith and Christians seeking
-          to grow in it. <a href="/pages/about/home.html">Read more about us</a>.
+          to grow in it.
+           <!-- <a href="/pages/about/home.html">Read more about us</a>. -->
         </p>
 
-        <section class="fundraising-video" aria-labelledby="fundraising-video-heading">
-          <h2 class="underline chatgpt" id="fundraising-video-heading">Our fundraising video</h2>
-          <figure>
-            <div class="fundraising-video-placeholder chatgpt">Fundraising video placeholder: add video embed here</div>
-            <figcaption class="chatgpt">This space is reserved for a video about the ministry and our fundraising goals.</figcaption>
-          </figure>
-        </section>
+        <div class="support-overview">
+          <section class="fundraising-video" aria-labelledby="fundraising-video-heading">
+            <h2 class="underline" id="fundraising-video-heading">Learn About the Ministry</h2>
+            <figure>
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/r2NmTsZyyGs"
+                title="Our fundraising video"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </figure>
+          </section>
 
-        <section
-          class="support-progress"
-          id="monthly-support-progress"
-          hidden
-          aria-labelledby="monthly-support-heading"
-        >
-          <h2 class="underline" id="monthly-support-heading">
-            Monthly support progress
-          </h2>
-          <p id="monthly-support-amount"></p>
-          <progress
-            id="monthly-support-meter"
-            max="1"
-            value="0"
-            aria-label="Progress toward monthly support goal"
-          ></progress>
-          <p class="support-progress-updated" id="monthly-support-updated"></p>
-        </section>
+          <section
+            class="support-progress"
+            id="monthly-support-progress"
+            hidden
+            aria-labelledby="monthly-support-heading"
+          >
+            <h2 class="underline" id="monthly-support-heading">
+              Monthly Goal
+            </h2>
+            <p id="monthly-support-amount"></p>
+            <progress
+              id="monthly-support-meter"
+              max="1"
+              value="0"
+              aria-label="Progress toward monthly support goal"
+            ></progress>
+            <p class="support-progress-updated" id="monthly-support-updated"></p>
+            <p class="support-progress-note">
+              Includes recurring monthly gifts and one-twelfth of annual recurring gifts;
+              one-time gifts are not included.
+            </p>
+          </section>
+        </div>
 
         <script>
           // Update these dollar values and date when you refresh the public total.

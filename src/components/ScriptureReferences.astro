@@ -1,9 +1,11 @@
 ---
 interface Props {
   citations: string;
+  translation?: "ESV" | "NASB95";
+  showTranslation?: boolean;
 }
 
-const { citations } = Astro.props;
+const { citations, translation = "ESV", showTranslation = false } = Astro.props;
 
 const bookCodes: Record<string, string> = {
   "1 Corinthians": "1co",
@@ -18,6 +20,7 @@ const bookCodes: Record<string, string> = {
   "2 John": "2jo",
   "3 John": "3jo",
   "Genesis": "gen",
+  "Psalms": "psa",
   "Exodus": "exo",
   "1 Kings": "1ki",
   "Micah": "mic",
@@ -55,7 +58,7 @@ const references = citations.split(";").map((citation) => {
   return {
     reference,
     href: book && chapter
-      ? `https://www.blueletterbible.org/esv/${bookCodes[book]}/${chapter}/`
+      ? `https://www.blueletterbible.org/${translation.toLowerCase()}/${bookCodes[book]}/${chapter}/`
       : undefined,
   };
 });
@@ -68,4 +71,5 @@ const references = citations.split(";").map((citation) => {
       {href ? <a href={href} target="_blank" rel="noopener noreferrer">{reference}</a> : reference}
     </>
   ))}
+  {showTranslation && <> <span class="scripture-translation">({translation})</span></>}
 </span>

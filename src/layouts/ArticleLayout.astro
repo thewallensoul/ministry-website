@@ -1,5 +1,5 @@
 ---
-const { title, section = 'case_for_christianity', scripturePopups = false } = Astro.props;
+const { title, section = 'case_for_christianity', scripturePopups = false, scriptureTranslation = 'ESV' } = Astro.props;
 ---
 
 <!doctype html>
@@ -13,7 +13,7 @@ const { title, section = 'case_for_christianity', scripturePopups = false } = As
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=info" />
     <script is:inline src="/assets/js/head-loader.js"></script>
   </head>
-  <body>
+  <body data-scripture-translation={scriptureTranslation}>
     <header class="site-header">
       <my-brand-bar></my-brand-bar>
       <nav class="desktop-nav">
@@ -48,7 +48,7 @@ const { title, section = 'case_for_christianity', scripturePopups = false } = As
       <>
         <script is:inline src="https://www.blueletterbible.org/assets/scripts/blbToolTip/BLB_ScriptTagger-min.js" type="text/javascript"></script>
         <script is:inline>
-          BLB.Tagger.Translation = 'ESV';
+          BLB.Tagger.Translation = document.body.dataset.scriptureTranslation || 'ESV';
           BLB.Tagger.HyperLinks = 'all';
           BLB.Tagger.HideTranslationAbbrev = false;
           BLB.Tagger.DarkTheme = true;
