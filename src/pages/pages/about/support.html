@@ -135,11 +135,11 @@
             supportAmount.textContent =
               `${formatCurrency.format(monthlySupportCommitted)} / ${formatCurrency.format(monthlySupportGoal)} per month`;
             supportUpdated.textContent =
-              `Updates once daily - last updated ${updatedDate.toLocaleDateString("en-US", {
+              `Last updated ${updatedDate.toLocaleDateString("en-US", {
                 month: "short",
                 day: "numeric",
                 year: "numeric",
-              })}`;
+              })} · Updates within 24 hours of gift.`;
             supportProgress.hidden = false;
           }
         </script>
